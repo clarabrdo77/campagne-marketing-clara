@@ -3,156 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Black Friday - Choco à prix très bas</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+    <title>BLACK FRIDAY | Choco à Prix Très Bas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        .navbar-brand {
-            font-weight: 800;
-            letter-spacing: 1px;
-            color: #ffc107 !important;
-        }
+        body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; }
         .hero-section {
-            padding: 120px 0 80px;
-            background: radial-gradient(circle, #2a1610 0%, #121212 100%);
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1549007994-cb92ca71450a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
             min-height: 100vh;
             display: flex;
             align-items: center;
         }
-        .badge-bf {
-            background-color: #dc3545;
-            font-size: 1.2rem;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        .highlight {
-            color: #ffc107;
-            font-weight: 900;
-            font-size: 4rem;
-        }
-        .countdown-container {
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px dashed #ffc107;
-            border-radius: 15px;
-            padding: 30px;
-            margin: 40px auto;
-            max-width: 500px;
-        }
-        #timer {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #fff;
-            text-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
-        }
-        .btn-cta {
-            background-color: #ffc107;
-            color: #121212;
-            font-size: 1.5rem;
-            font-weight: bold;
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
-        }
-        .btn-cta:hover {
-            background-color: #e0a800;
-            transform: translateY(-3px);
-            color: #121212;
-            box-shadow: 0 8px 20px rgba(255, 193, 7, 0.6);
-        }
-        .product-card {
-            background-color: #1e1e1e;
-            border: none;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-        }
-        .old-price {
-            text-decoration: line-through;
-            color: #888;
-            font-size: 1.2rem;
-        }
-        .new-price {
-            color: #ffc107;
-            font-size: 1.8rem;
-            font-weight: bold;
-        }
+        .text-gold { color: #ffcc00; }
+        .badge-sale { background-color: #ff0000; color: white; font-weight: 900; padding: 10px 20px; border-radius: 50px; display: inline-block; margin-bottom: 20px; }
+        .btn-cta { background-color: #ff0000; color: white; border: none; padding: 15px 40px; font-weight: bold; font-size: 1.2rem; transition: transform 0.3s; }
+        .btn-cta:hover { transform: scale(1.05); background-color: #cc0000; color: white; }
+        .timer-box { background: rgba(255, 255, 255, 0.1); border: 1px solid #ffcc00; padding: 20px; border-radius: 10px; margin-top: 30px; }
+        .product-card { background: #1a1a1a; border: none; transition: 0.3s; margin-bottom: 30px; }
+        .product-card:hover { transform: translateY(-10px); }
+        .price-old { text-decoration: line-through; color: #888; margin-right: 10px; }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-dark bg-dark py-3 fixed-top">
+    <nav class="navbar navbar-dark bg-dark py-3">
         <div class="container justify-content-center">
-            <a class="navbar-brand" href="#">🍫 CHOCO À PRIX TRÈS BAS</a>
+            <span class="navbar-brand fw-bold">CHOCO À PRIX TRÈS BAS</span>
         </div>
     </nav>
 
     <section class="hero-section text-center">
         <div class="container">
-            <span class="badge badge-bf mb-4">Offre Exclusive Black Friday</span>
+            <div class="badge-sale animate__animated animate__pulse animate__infinite">BLACK FRIDAY</div>
+            <h1 class="display-1 fw-900 mb-3">VOS CHOCOLATS À <span class="text-gold">-30%</span></h1>
+            <p class="lead mb-4">La gourmandise n'a jamais été aussi accessible. Profitez des prix les plus bas de l'année.</p>
             
-            <h1 class="display-3 fw-bold mb-3">Craquez aujourd'hui avec</h1>
-            <div class="highlight mb-4">-30% SUR TOUT !</div>
-            
-            <p class="lead fs-4 text-light">Les meilleurs chocolats de la marque <strong>Choco à prix très bas</strong> n'ont jamais si bien porté leur nom.</p>
-            
-            <div class="countdown-container">
-                <h3 class="mb-3 text-uppercase fs-5">L'offre expire ce soir à minuit</h3>
-                <div id="timer">--h --m --s</div>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="timer-box">
+                        <h4 class="mb-3 text-uppercase">L'offre expire dans :</h4>
+                        <div id="countdown" class="display-6 fw-bold text-gold">--h --m --s</div>
+                        <p class="mt-2 mb-0 text-white-50">Offre valable jusqu'à minuit uniquement.</p>
+                    </div>
+                </div>
             </div>
 
-            <a href="#produits" class="btn-cta mt-3">Je commande maintenant</a>
-        </div>
-    </section>
-
-    <section id="produits" class="container py-5">
-        <h2 class="text-center mb-5">Nos meilleures ventes</h2>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="product-card">
-                    <h3 class="h4">Coffret Noir Intense</h3>
-                    <p class="text-muted">70% de cacao pur</p>
-                    <div class="mb-3">
-                        <span class="old-price">20,00 €</span>
-                        <span class="new-price ms-2">14,00 €</span>
-                    </div>
-                    <button class="btn btn-outline-warning w-100">Ajouter au panier</button>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="product-card">
-                    <h3 class="h4">Assortiment Praliné</h3>
-                    <p class="text-muted">Le favori des gourmands</p>
-                    <div class="mb-3">
-                        <span class="old-price">15,00 €</span>
-                        <span class="new-price ms-2">10,50 €</span>
-                    </div>
-                    <button class="btn btn-outline-warning w-100">Ajouter au panier</button>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="product-card">
-                    <h3 class="h4">Truffes Fondantes</h3>
-                    <p class="text-muted">Saupoudrées de cacao amer</p>
-                    <div class="mb-3">
-                        <span class="old-price">18,00 €</span>
-                        <span class="new-price ms-2">12,60 €</span>
-                    </div>
-                    <button class="btn btn-outline-warning w-100">Ajouter au panier</button>
-                </div>
+            <div class="mt-5">
+                <a href="#boutique" class="btn btn-cta">EN PROFITER MAINTENANT</a>
             </div>
         </div>
     </section>
 
-    <footer class="bg
+    <section id="boutique" class="py-5 bg-white text-dark">
+        <div class="container py-5">
+            <h2 class="text-center mb-5 fw-bold">NOS MEILLEURES VENTES</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card product-card h-100 p-3">
+                        <img src="https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=400&q=80" class="card-img-top rounded" alt="Chocolat Noir">
+                        <div class="card-body text-white">
+                            <h5 class="card-title">Coffret Intense Noir</h5>
+                            <p class="card-text text-white-50 small">70% de cacao, 100% de plaisir.</p>
+                            <div class="d-flex align-items-center mb-3">
+                                <span class="price-old">19,99€</span>
+                                <span class="h4 mb-0 text-gold">13,99€</span>
+                            </div>
+                            <button class="btn btn-outline-light w-100">Ajouter au panier</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card product-card h-100 p-3">
+                        <img src="https://images.unsplash.com/photo-1548907040-4baa42d10919?auto=format&fit=crop&w=400&q=80" class="card-img-top rounded" alt="Chocolat Lait">
+                        <div class="card-body text-white">
+                            <h5 class="card-title">Assortiment Lait Onctueux</h5>
+                            <p class="card-text text-white-50 small">Le favori des petits et des grands.</p>
+                            <div class="d-flex align-items-center mb-3">
+                                <span class="price-old">24,99€</span>
+                                <span class="h4 mb-0 text-gold">17,49€</span>
+                            </div>
+                            <button class="btn btn-outline-light w-100">Ajouter au panier</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card product-card h-100 p-3">
+                        <img src="https://images.unsplash.com/photo-1526081347589-7fa3cb469dd6?auto=format&fit=crop&w=400&q=80" class="card-img-top rounded" alt="Chocolat Noisettes">
+                        <div class="card-body text-white">
+                            <h5 class="card-title">Praliné Croustillant</h5>
+                            <p class="card-text text-white-50 small">Noisettes entières torréfiées.</p>
+                            <div class="d-flex align-items-center mb-3">
+                                <span class="price-old">14,99€</span>
+                                <span class="h4 mb-0 text-gold">10,49€</span>
+                            </div>
+                            <button class="btn btn-outline-light w-100">Ajouter au panier</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark py-4 border-top border-secondary">
+        <div class="container text-center">
+            <p class="mb-0 text-white-50">&copy; 2024 Choco à Prix Très Bas - Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        function updateCountdown() {
+            const now = new Date();
+            const midnight = new Date();
+            midnight.setHours(24, 0, 0, 0);
+
+            const diff = midnight - now;
+
+            const h = Math.floor(diff / 1000 / 60 / 60);
+            const m = Math.floor(diff / 1000 / 60) % 60;
+            const s = Math.floor(diff / 1000) % 60;
+
+            document.getElementById('countdown').innerHTML = 
+                `${h}h ${m < 10 ? '0' + m : m}m ${s < 10 ? '0' + s : s}s`;
+
+            if (diff <= 0) {
+                document.getElementById('countdown').innerHTML = "OFFRE TERMINÉE";
+            }
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+
+</body>
+</html>
