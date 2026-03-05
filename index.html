@@ -118,12 +118,34 @@
         .trust-icon { font-size: 2rem; color: var(--neon-blue); margin-bottom: 10px; }
         .trust-text { font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* Tickets Section */
-        .tickets-section { padding: 100px 0; }
+        /* --- NOUVELLE SECTION : SETLIST / SONS --- */
+        .setlist-section { padding: 80px 0; background-color: var(--bg-dark); }
         .section-title { font-size: 2.5rem; text-align: center; margin-bottom: 60px; color: var(--neon-blue); text-shadow: 0 0 10px rgba(5, 217, 232, 0.3); }
         
+        .track-item { 
+            display: flex; align-items: center; justify-content: space-between; 
+            padding: 15px 25px; border-bottom: 1px solid #222; transition: all 0.3s ease; 
+            background: rgba(20, 20, 20, 0.5); margin-bottom: 10px; border-radius: 8px;
+            border-left: 3px solid transparent;
+        }
+        .track-item:hover { 
+            background: rgba(255, 42, 109, 0.05); 
+            border-left: 3px solid var(--neon-pink); 
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+        .track-info { display: flex; align-items: center; gap: 20px; }
+        .track-number { color: var(--neon-blue); font-family: 'Oswald', sans-serif; font-size: 1.5rem; font-weight: bold; width: 30px; }
+        .track-details { display: flex; flex-direction: column; }
+        .track-name { font-size: 1.2rem; font-weight: 600; margin: 0; color: var(--text-light); }
+        .track-album { font-size: 0.85rem; color: #888; margin: 0; text-transform: uppercase; letter-spacing: 1px; }
+        .play-btn { color: var(--neon-pink); font-size: 1.8rem; cursor: pointer; transition: 0.3s; }
+        .play-btn:hover { color: var(--neon-blue); text-shadow: 0 0 10px var(--neon-blue); transform: scale(1.1); }
+
+        /* Tickets Section */
+        .tickets-section { padding: 100px 0; background-color: var(--bg-card); border-top: 1px solid #222;}
         .ticket-card {
-            background-color: var(--bg-card);
+            background-color: var(--bg-dark);
             border: 1px solid #333;
             padding: 30px;
             text-align: center;
@@ -137,16 +159,7 @@
             box-shadow: 0 10px 30px rgba(255, 42, 109, 0.2);
             transform: translateY(-10px);
         }
-        .ticket-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            margin-bottom: 20px;
-            filter: grayscale(50%);
-            transition: 0.3s;
-        }
-        .ticket-card:hover .ticket-img { filter: grayscale(0%); }
-        .ticket-title { font-size: 1.8rem; margin-bottom: 10px; }
+        .ticket-title { font-size: 1.8rem; margin-bottom: 10px; margin-top: 20px;}
         .ticket-price { font-size: 2.5rem; font-family: 'Oswald', sans-serif; color: var(--neon-pink); margin-bottom: 20px; }
         .ticket-features { list-style: none; padding: 0; margin-bottom: 30px; color: #aaa; font-size: 0.9rem; text-align: left; }
         .ticket-features li { margin-bottom: 10px; border-bottom: 1px solid #222; padding-bottom: 5px; }
@@ -167,7 +180,7 @@
         .ticket-card:hover .btn-ticket { background: var(--neon-blue); color: #000; box-shadow: 0 0 15px var(--neon-blue); }
 
         /* VIP Experience Section */
-        .vip-section { background-color: var(--bg-card); padding: 80px 0; border-top: 1px solid #333; border-bottom: 1px solid #333; }
+        .vip-section { background-color: var(--bg-dark); padding: 80px 0; border-top: 1px solid #333; border-bottom: 1px solid #333; }
         .vip-img { width: 100%; height: 400px; object-fit: cover; border: 2px solid var(--neon-pink); box-shadow: 0 0 20px rgba(255, 42, 109, 0.3); }
 
         /* Chatbot */
@@ -210,7 +223,7 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#">Tournée 2026</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#setlist">Sons</a></li>
                     <li class="nav-item"><a class="nav-link" href="#tickets">Billetterie</a></li>
                     <li class="nav-item"><a class="nav-link" href="#vip">VIP</a></li>
                 </ul>
@@ -252,6 +265,74 @@
         </div>
     </section>
 
+    <section id="setlist" class="setlist-section">
+        <div class="container">
+            <h2 class="section-title">LES HITS QU'ON VEUT ENTENDRE</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    
+                    <div class="track-item">
+                        <div class="track-info">
+                            <span class="track-number">01</span>
+                            <div class="track-details">
+                                <p class="track-name">MONACO</p>
+                                <p class="track-album">nadie sabe lo que va a pasar mañana</p>
+                            </div>
+                        </div>
+                        <i class="bi bi-play-circle-fill play-btn" onclick="alert('Aperçu audio indisponible pour des raisons de droits. Mais imaginez le beat ! 🔥')"></i>
+                    </div>
+
+                    <div class="track-item">
+                        <div class="track-info">
+                            <span class="track-number">02</span>
+                            <div class="track-details">
+                                <p class="track-name">Tití Me Preguntó</p>
+                                <p class="track-album">Un Verano Sin Ti</p>
+                            </div>
+                        </div>
+                        <i class="bi bi-play-circle-fill play-btn" onclick="alert('Aperçu audio indisponible pour des raisons de droits. Mais imaginez le beat ! 🔥')"></i>
+                    </div>
+
+                    <div class="track-item">
+                        <div class="track-info">
+                            <span class="track-number">03</span>
+                            <div class="track-details">
+                                <p class="track-name">Me Porto Bonito</p>
+                                <p class="track-album">Un Verano Sin Ti</p>
+                            </div>
+                        </div>
+                        <i class="bi bi-play-circle-fill play-btn" onclick="alert('Aperçu audio indisponible pour des raisons de droits. Mais imaginez le beat ! 🔥')"></i>
+                    </div>
+
+                    <div class="track-item">
+                        <div class="track-info">
+                            <span class="track-number">04</span>
+                            <div class="track-details">
+                                <p class="track-name">Dákiti</p>
+                                <p class="track-album">EL ÚLTIMO TOUR DEL MUNDO</p>
+                            </div>
+                        </div>
+                        <i class="bi bi-play-circle-fill play-btn" onclick="alert('Aperçu audio indisponible pour des raisons de droits. Mais imaginez le beat ! 🔥')"></i>
+                    </div>
+
+                    <div class="track-item">
+                        <div class="track-info">
+                            <span class="track-number">05</span>
+                            <div class="track-details">
+                                <p class="track-name">Callaíta</p>
+                                <p class="track-album">Un Verano Sin Ti</p>
+                            </div>
+                        </div>
+                        <i class="bi bi-play-circle-fill play-btn" onclick="alert('Aperçu audio indisponible pour des raisons de droits. Mais imaginez le beat ! 🔥')"></i>
+                    </div>
+
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="#tickets" class="btn-ticket d-inline-block px-5" style="width: auto;">ÇA DONNE ENVIE ? PRENDS TA PLACE !</a>
+            </div>
+        </div>
+    </section>
     <section id="tickets" class="tickets-section">
         <div class="container">
             <h2 class="section-title">CHOISIS TA ZONE</h2>
@@ -259,7 +340,6 @@
             <div class="row g-4 justify-content-center">
                 <div class="col-md-6 col-lg-4">
                     <div class="ticket-card">
-                        <img src="https://images.unsplash.com/photo-1574686948577-628c68884976?q=80&w=500&auto=format&fit=crop" alt="Fosse" class="ticket-img">
                         <h3 class="ticket-title">FOSSE OR</h3>
                         <div class="ticket-price">129 €</div>
                         <ul class="ticket-features">
@@ -273,7 +353,6 @@
 
                 <div class="col-md-6 col-lg-4">
                     <div class="ticket-card">
-                        <img src="https://images.unsplash.com/photo-1470229722913-7c092bce8e4e?q=80&w=500&auto=format&fit=crop" alt="Gradins" class="ticket-img">
                         <h3 class="ticket-title">GRADIN CAT 1</h3>
                         <div class="ticket-price">149 €</div>
                         <ul class="ticket-features">
@@ -287,7 +366,6 @@
 
                 <div class="col-md-6 col-lg-4">
                     <div class="ticket-card" style="border-color: var(--neon-pink);">
-                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=500&auto=format&fit=crop" alt="VIP" class="ticket-img">
                         <h3 class="ticket-title" style="color: var(--neon-pink);">PACK VIP LOUNGE</h3>
                         <div class="ticket-price">349 €</div>
                         <ul class="ticket-features">
@@ -357,7 +435,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        // --- Compte à rebours ---
         function updateTimer() {
             const now = new Date();
             const midnight = new Date();
@@ -383,7 +460,6 @@
         setInterval(updateTimer, 1000);
         updateTimer();
 
-        // --- Chatbot ---
         function toggleChat() {
             const chatWindow = document.getElementById('chatWindow');
             chatWindow.style.display = chatWindow.style.display === "flex" ? "none" : "flex";
