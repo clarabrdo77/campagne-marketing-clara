@@ -3,363 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Choco venez dégustez | Black Friday</title>
+    <title>Bad Bunny | World Tour 2026 - Paris</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --dark-brown: #342a27;
-            --darker-brown: #251d1a;
-            --beige: #eadecd;
+            --bg-dark: #0a0a0a;
+            --bg-card: #141414;
+            --neon-pink: #ff2a6d;
+            --neon-blue: #05d9e8;
             --text-light: #ffffff;
-            --accent-red: #c0392b;
         }
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--dark-brown);
+            background-color: var(--bg-dark);
             color: var(--text-light);
             scroll-behavior: smooth;
         }
 
+        h1, h2, h3, h4, .navbar-brand {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+        }
+
         /* Navbar */
         .navbar {
-            background-color: var(--dark-brown);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            background-color: rgba(10, 10, 10, 0.95);
+            border-bottom: 2px solid var(--neon-pink);
+            backdrop-filter: blur(10px);
         }
         .navbar-brand {
-            font-weight: 700;
+            font-size: 1.8rem;
             letter-spacing: 2px;
-            font-size: 1.5rem;
+            color: var(--text-light) !important;
+            text-shadow: 0 0 10px var(--neon-pink);
         }
         .nav-link {
             color: var(--text-light) !important;
-            font-size: 0.85rem;
+            font-weight: 600;
             letter-spacing: 1px;
-            text-transform: uppercase;
-            margin: 0 10px;
+            margin: 0 15px;
+            transition: color 0.3s;
         }
+        .nav-link:hover { color: var(--neon-blue) !important; }
 
         /* Hero Section */
         .hero-section {
-            background-color: var(--dark-brown);
-            padding: 80px 0 120px 0;
-            position: relative;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1459749411175-04bf5292ceea?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0 100px 0;
+            text-align: center;
+            border-bottom: 1px solid #333;
         }
-        .hero-title {
+        .hero-badge {
+            background-color: var(--neon-blue);
+            color: #000;
             font-weight: 700;
-            font-size: 3.5rem;
-            line-height: 1.2;
-            letter-spacing: 1px;
-        }
-        .hero-subtitle {
-            font-weight: 300;
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            color: #d1c8c5;
-        }
-        .btn-custom {
-            border: 1px solid var(--text-light);
-            background: transparent;
-            color: var(--text-light);
-            padding: 12px 30px;
-            text-transform: uppercase;
+            padding: 8px 20px;
             letter-spacing: 2px;
-            font-size: 0.85rem;
-            transition: all 0.3s;
-            text-decoration: none;
+            border-radius: 0;
+            margin-bottom: 20px;
             display: inline-block;
         }
-        .btn-custom:hover {
-            background: var(--text-light);
-            color: var(--dark-brown);
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-shadow: 0 0 20px var(--neon-pink);
+            line-height: 1.1;
+            margin-bottom: 20px;
         }
-        .hero-img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #ddd;
+            margin-bottom: 40px;
+        }
+        .btn-glow {
+            background: var(--neon-pink);
+            color: var(--text-light);
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            padding: 15px 40px;
+            border: none;
+            letter-spacing: 2px;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 0 15px var(--neon-pink);
+        }
+        .btn-glow:hover {
+            background: var(--text-light);
+            color: var(--neon-pink);
+            box-shadow: 0 0 25px var(--text-light);
+            transform: scale(1.05);
         }
 
         /* Countdown Box */
         .countdown-wrapper {
-            background-color: var(--accent-red);
-            padding: 15px;
-            display: inline-block;
-            margin-top: 20px;
+            background-color: rgba(255, 42, 109, 0.1);
+            border: 2px dashed var(--neon-pink);
+            padding: 20px;
+            max-width: 500px;
+            margin: 40px auto 0;
         }
-        .countdown-wrapper h6 {
-            margin: 0 0 5px 0;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-        }
-        #timer {
-            font-size: 2rem;
-            font-weight: 700;
-            letter-spacing: 3px;
-        }
+        .countdown-wrapper h6 { color: var(--neon-blue); letter-spacing: 3px; }
+        #timer { font-size: 3rem; font-family: 'Oswald', sans-serif; font-weight: 700; color: var(--text-light); }
 
-        /* Overlapping Feature Boxes */
-        .features-container {
-            margin-top: -60px;
-            position: relative;
-            z-index: 10;
-        }
-        .feature-box {
-            background-color: var(--beige);
-            color: var(--dark-brown);
-            text-align: center;
-            padding: 30px 15px;
-            height: 100%;
-            border: 1px solid #d4c5b3;
-            transition: transform 0.3s;
-        }
-        .feature-box:hover {
-            transform: translateY(-5px);
-        }
-        .feature-box h4 {
-            font-size: 0.9rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-        }
-        .feature-icon {
-            font-size: 2rem;
-        }
+        /* Trust Bar */
+        .trust-bar { background-color: var(--bg-card); padding: 30px 0; border-bottom: 1px solid #222; }
+        .trust-icon { font-size: 2rem; color: var(--neon-blue); margin-bottom: 10px; }
+        .trust-text { font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* Products Section */
-        .products-section {
-            background-color: var(--darker-brown);
-            padding: 100px 0;
-            text-align: center;
-        }
-        .section-title {
-            font-size: 1.8rem;
-            letter-spacing: 4px;
-            font-weight: 600;
-            margin-bottom: 60px;
-            text-transform: uppercase;
-        }
-        .product-img-wrapper {
-            margin-bottom: -20px;
-            position: relative;
-            z-index: 2;
-        }
-        .product-img-wrapper img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            border-radius: 2px;
-        }
-        .product-info {
-            border: 2px solid var(--text-light);
-            padding: 30px 15px 15px 15px;
-            position: relative;
-            z-index: 1;
-        }
-        .product-info h5 {
-            font-size: 1rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-        }
-        .price-old {
-            font-size: 0.8rem;
-            text-decoration: line-through;
-            opacity: 0.7;
-        }
-        .price-new {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--beige);
-        }
-
-        /* --- NOUVELLE SECTION RECETTE --- */
-        .recipe-section {
-            background-color: var(--dark-brown);
-            padding: 100px 0;
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
-        .recipe-image {
-            width: 100%;
-            height: 450px;
-            object-fit: cover;
-            border-radius: 5px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-        }
-        .recipe-card {
-            border: 2px dashed var(--beige);
-            background-color: rgba(234, 222, 205, 0.05);
+        /* Tickets Section */
+        .tickets-section { padding: 100px 0; }
+        .section-title { font-size: 2.5rem; text-align: center; margin-bottom: 60px; color: var(--neon-blue); text-shadow: 0 0 10px rgba(5, 217, 232, 0.3); }
+        
+        .ticket-card {
+            background-color: var(--bg-card);
+            border: 1px solid #333;
             padding: 30px;
-            margin-top: 20px;
-        }
-        .recipe-list {
-            list-style: none;
-            padding: 0;
-        }
-        .recipe-list li {
-            margin-bottom: 12px;
-            font-size: 0.95rem;
-            letter-spacing: 0.5px;
-        }
-        .recipe-list i {
-            color: var(--beige);
-            margin-right: 10px;
-        }
-
-        /* Newsletter Section */
-        .newsletter-section {
-            background-color: var(--beige);
-            color: var(--dark-brown);
-            padding: 50px 0;
             text-align: center;
+            transition: all 0.3s;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
         }
-        .newsletter-title {
-            font-weight: 600;
-            letter-spacing: 3px;
-            text-transform: uppercase;
+        .ticket-card:hover {
+            border-color: var(--neon-pink);
+            box-shadow: 0 10px 30px rgba(255, 42, 109, 0.2);
+            transform: translateY(-10px);
         }
-        .form-control-custom {
+        .ticket-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            filter: grayscale(50%);
+            transition: 0.3s;
+        }
+        .ticket-card:hover .ticket-img { filter: grayscale(0%); }
+        .ticket-title { font-size: 1.8rem; margin-bottom: 10px; }
+        .ticket-price { font-size: 2.5rem; font-family: 'Oswald', sans-serif; color: var(--neon-pink); margin-bottom: 20px; }
+        .ticket-features { list-style: none; padding: 0; margin-bottom: 30px; color: #aaa; font-size: 0.9rem; text-align: left; }
+        .ticket-features li { margin-bottom: 10px; border-bottom: 1px solid #222; padding-bottom: 5px; }
+        .ticket-features i { color: var(--neon-blue); margin-right: 10px; }
+        
+        .btn-ticket {
             background: transparent;
-            border: 1px solid var(--dark-brown);
-            border-radius: 0;
-            padding: 10px 20px;
-        }
-        .btn-newsletter {
-            background: var(--dark-brown);
-            color: var(--beige);
-            border: none;
-            padding: 10px 30px;
+            border: 2px solid var(--neon-blue);
+            color: var(--neon-blue);
+            font-family: 'Oswald', sans-serif;
+            width: 100%;
+            padding: 12px;
+            font-size: 1.2rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-size: 0.8rem;
+            transition: 0.3s;
         }
+        .ticket-card:hover .btn-ticket { background: var(--neon-blue); color: #000; box-shadow: 0 0 15px var(--neon-blue); }
 
-        /* Footer */
-        .footer {
-            background-color: var(--darker-brown);
-            padding: 30px 0;
-            font-size: 0.8rem;
-            color: #888;
-        }
+        /* VIP Experience Section */
+        .vip-section { background-color: var(--bg-card); padding: 80px 0; border-top: 1px solid #333; border-bottom: 1px solid #333; }
+        .vip-img { width: 100%; height: 400px; object-fit: cover; border: 2px solid var(--neon-pink); box-shadow: 0 0 20px rgba(255, 42, 109, 0.3); }
 
         /* Chatbot */
-        .chat-widget {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
+        .chat-widget { position: fixed; bottom: 20px; right: 20px; z-index: 1000; }
         .chat-button {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background-color: var(--beige);
-            color: var(--dark-brown);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            width: 65px; height: 65px; border-radius: 50%;
+            background-color: var(--neon-pink); color: #fff;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2rem; cursor: pointer;
+            box-shadow: 0 0 20px rgba(255, 42, 109, 0.5);
             transition: transform 0.3s;
         }
         .chat-button:hover { transform: scale(1.1); }
         .chat-window {
-            display: none;
-            position: absolute;
-            bottom: 80px;
-            right: 0;
-            width: 300px;
-            background-color: #fff;
-            color: #333;
-            border-radius: 10px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
-            overflow: hidden;
-            flex-direction: column;
-            font-family: 'Montserrat', sans-serif;
+            display: none; position: absolute; bottom: 80px; right: 0;
+            width: 320px; background-color: var(--bg-card); border: 1px solid var(--neon-pink);
+            border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            overflow: hidden; flex-direction: column;
         }
-        .chat-header {
-            background-color: var(--dark-brown);
-            color: var(--beige);
-            padding: 15px;
-            font-weight: 600;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .chat-body {
-            padding: 15px;
-            height: 250px;
-            overflow-y: auto;
-            background-color: #f8f9fa;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .chat-message {
-            padding: 10px 15px;
-            border-radius: 15px;
-            font-size: 0.85rem;
-            max-width: 85%;
-            line-height: 1.4;
-        }
-        .chat-message.bot {
-            background-color: #e9ecef;
-            align-self: flex-start;
-            border-bottom-left-radius: 0;
-        }
-        .chat-message.user {
-            background-color: var(--beige);
-            color: var(--dark-brown);
-            align-self: flex-end;
-            border-bottom-right-radius: 0;
-        }
-        .chat-input {
-            display: flex;
-            padding: 10px;
-            border-top: 1px solid #eee;
-            background: #fff;
-        }
-        .chat-input input {
-            flex-grow: 1;
-            border: 1px solid #ccc;
-            border-radius: 20px;
-            padding: 8px 15px;
-            outline: none;
-            font-size: 0.85rem;
-        }
-        .chat-input button {
-            background: none;
-            border: none;
-            color: var(--dark-brown);
-            font-size: 1.2rem;
-            cursor: pointer;
-            margin-left: 10px;
-            transition: 0.2s;
-        }
-        .chat-input button:hover { color: var(--accent-red); }
-        .close-chat { cursor: pointer; color: var(--text-light); transition: 0.2s; }
-        .close-chat:hover { color: var(--accent-red); }
+        .chat-header { background-color: var(--neon-pink); color: #fff; padding: 15px; font-family: 'Oswald', sans-serif; font-size: 1.2rem; display: flex; justify-content: space-between; align-items: center; }
+        .chat-body { padding: 15px; height: 300px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
+        .chat-message { padding: 12px; border-radius: 10px; font-size: 0.9rem; max-width: 85%; }
+        .chat-message.bot { background-color: #222; color: #fff; align-self: flex-start; border-left: 3px solid var(--neon-blue); }
+        .chat-message.user { background-color: var(--neon-blue); color: #000; align-self: flex-end; font-weight: 600; }
+        .chat-input { display: flex; padding: 10px; border-top: 1px solid #333; background: #111; }
+        .chat-input input { flex-grow: 1; border: none; background: #222; color: #fff; border-radius: 5px; padding: 10px; outline: none; }
+        .chat-input button { background: none; border: none; color: var(--neon-pink); font-size: 1.5rem; cursor: pointer; margin-left: 10px; }
+
+        /* Footer */
+        .footer { padding: 40px 0; text-align: center; color: #666; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand text-white" href="#">CHOCO À PRIX TRÈS BAS</a>
+            <a class="navbar-brand" href="#"><i class="bi bi-fire text-danger me-2"></i>BAD BUNNY</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+                <i class="bi bi-list text-white" style="font-size: 2rem;"></i>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#">Accueil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#shop">Boutique</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#recette">Recette</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Tournée 2026</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tickets">Billetterie</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#vip">VIP</a></li>
                 </ul>
             </div>
         </div>
@@ -367,195 +220,144 @@
 
     <section class="hero-section">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-5 mb-lg-0">
-                    <h1 class="hero-title mb-3">BLACK FRIDAY<br>TOUT À -30%</h1>
-                    <p class="hero-subtitle">La qualité artisanale, des saveurs intenses. L'offre la plus gourmande de l'année est enfin là.</p>
-                    <a href="#shop" class="btn-custom">DÉCOUVRIR L'OFFRE</a>
-                    <br>
-                    <div class="countdown-wrapper mt-4 text-center">
-                        <h6>EXPIRATION CE SOIR :</h6>
-                        <div id="timer">00:00:00</div>
-                    </div>
+            <span class="hero-badge">L'ÉVÉNEMENT DE L'ANNÉE</span>
+            <h1 class="hero-title">EL CONEJO MALO<br>À PARIS</h1>
+            <p class="hero-subtitle">Stade de France. Une seule date. Ne reste pas sur la touche.</p>
+            
+            <a href="#tickets" class="btn-glow">RÉSERVER MA PLACE</a>
+            
+            <div class="countdown-wrapper">
+                <h6>🚨 FIN DES PRÉVENTES EXCLUSIVES DANS :</h6>
+                <div id="timer">00:00:00</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="trust-bar text-center">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <i class="bi bi-ticket-perforated trust-icon"></i>
+                    <div class="trust-text">Billet E-Ticket Immédiat</div>
                 </div>
-                <div class="col-lg-6">
-                    <img src="https://as2.ftcdn.net/v2/jpg/03/06/65/85/1000_F_306658581_OUipI6kIiUAmnnx6jHgHHDql6U3vCIeR.jpg" alt="Morceaux de chocolat noir" class="hero-img">
+                <div class="col-md-4">
+                    <i class="bi bi-shield-lock trust-icon"></i>
+                    <div class="trust-text">Paiement 100% Sécurisé</div>
+                </div>
+                <div class="col-md-4">
+                    <i class="bi bi-headset trust-icon"></i>
+                    <div class="trust-text">Service Client 24/7</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="container features-container">
-        <div class="row g-0">
-            <div class="col-6 col-md-3">
-                <div class="feature-box border-end-0">
-                    <h4 class="mb-2">100% CACAO</h4>
-                    <i class="bi bi-award feature-icon"></i>
-                </div>
-            </div>
-            <div class="col-6 col-md-3">
-                <div class="feature-box border-end-0">
-                    <h4 class="mb-2">ARTISANAL</h4>
-                    <i class="bi bi-stars feature-icon"></i>
-                </div>
-            </div>
-            <div class="col-6 col-md-3">
-                <div class="feature-box border-end-0">
-                    <h4 class="mb-2">LIVRAISON 48H</h4>
-                    <i class="bi bi-box-seam feature-icon"></i>
-                </div>
-            </div>
-            <div class="col-6 col-md-3">
-                <div class="feature-box">
-                    <h4 class="mb-2">SANS HUILE DE PALME</h4>
-                    <i class="bi bi-droplet feature-icon"></i>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <section id="shop" class="products-section mt-5">
+    <section id="tickets" class="tickets-section">
         <div class="container">
-            <h2 class="section-title">UN CHOCOLAT POUR CHAQUE OCCASION</h2>
+            <h2 class="section-title">CHOISIS TA ZONE</h2>
             
-            <div class="row mt-5 g-4 justify-content-center">
-                
-                <div class="col-10 col-md-6 col-lg-3">
-                    <div class="product-item">
-                        <div class="product-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1548907040-4baa42d10919?q=80&w=500&auto=format&fit=crop" alt="Tablette Chocolat 90%">
-                        </div>
-                        <div class="product-info">
-                            <h5>FONDANT 90%</h5>
-                            <span class="price-old">5.00 €</span> &nbsp; <span class="price-new">3.50 €</span>
-                        </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="ticket-card">
+                        <img src="https://images.unsplash.com/photo-1574686948577-628c68884976?q=80&w=500&auto=format&fit=crop" alt="Fosse" class="ticket-img">
+                        <h3 class="ticket-title">FOSSE OR</h3>
+                        <div class="ticket-price">129 €</div>
+                        <ul class="ticket-features">
+                            <li><i class="bi bi-check2"></i> Accès au plus près de la scène</li>
+                            <li><i class="bi bi-check2"></i> Placement libre debout</li>
+                            <li><i class="bi bi-check2"></i> Entrée prioritaire "Early Entry"</li>
+                        </ul>
+                        <button class="btn btn-ticket">SÉLECTIONNER</button>
                     </div>
                 </div>
 
-                <div class="col-10 col-md-6 col-lg-3">
-                    <div class="product-item">
-                        <div class="product-img-wrapper">
-                            <img src="https://as1.ftcdn.net/v2/jpg/00/90/82/84/1000_F_90828477_8u89sBj3oGkS6TIjRMkRjyb0yxR5nQAm.jpg" alt="Tablette Chocolat 70%">
-                        </div>
-                        <div class="product-info">
-                            <h5>FONDANT 70%</h5>
-                            <span class="price-old">4.50 €</span> &nbsp; <span class="price-new">3.15 €</span>
-                        </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="ticket-card">
+                        <img src="https://images.unsplash.com/photo-1470229722913-7c092bce8e4e?q=80&w=500&auto=format&fit=crop" alt="Gradins" class="ticket-img">
+                        <h3 class="ticket-title">GRADIN CAT 1</h3>
+                        <div class="ticket-price">149 €</div>
+                        <ul class="ticket-features">
+                            <li><i class="bi bi-check2"></i> Place assise numérotée</li>
+                            <li><i class="bi bi-check2"></i> Vue panoramique sur le show</li>
+                            <li><i class="bi bi-check2"></i> Accès bars et merchandising</li>
+                        </ul>
+                        <button class="btn btn-ticket">SÉLECTIONNER</button>
                     </div>
                 </div>
 
-                <div class="col-10 col-md-6 col-lg-3">
-                    <div class="product-item">
-                        <div class="product-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1511381939415-e44015466834?q=80&w=500&auto=format&fit=crop" alt="Truffes">
-                        </div>
-                        <div class="product-info">
-                            <h5>TRUFFES CACAO</h5>
-                            <span class="price-old">8.00 €</span> &nbsp; <span class="price-new">5.60 €</span>
-                        </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="ticket-card" style="border-color: var(--neon-pink);">
+                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=500&auto=format&fit=crop" alt="VIP" class="ticket-img">
+                        <h3 class="ticket-title" style="color: var(--neon-pink);">PACK VIP LOUNGE</h3>
+                        <div class="ticket-price">349 €</div>
+                        <ul class="ticket-features">
+                            <li><i class="bi bi-star-fill text-warning"></i> Accès loge privative</li>
+                            <li><i class="bi bi-star-fill text-warning"></i> Open bar & buffet traiteur</li>
+                            <li><i class="bi bi-star-fill text-warning"></i> Merchandising exclusif offert</li>
+                        </ul>
+                        <button class="btn btn-ticket" style="background: var(--neon-pink); color: #fff; border-color: var(--neon-pink);">SÉLECTIONNER</button>
                     </div>
                 </div>
-
-                <div class="col-10 col-md-6 col-lg-3">
-                    <div class="product-item">
-                        <div class="product-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1606312619070-d48b4c652a52?q=80&w=500&auto=format&fit=crop" alt="Pralinés">
-                        </div>
-                        <div class="product-info">
-                            <h5>PRALINÉS</h5>
-                            <span class="price-old">6.50 €</span> &nbsp; <span class="price-new">4.55 €</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            
-            <div class="mt-5">
-                <a href="#" class="btn-custom">TOUS LES PRODUITS</a>
             </div>
         </div>
     </section>
 
-    <section id="recette" class="recipe-section">
+    <section id="vip" class="vip-section">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6 mb-5 mb-lg-0">
-                    <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?q=80&w=800&auto=format&fit=crop" alt="Gâteau au chocolat fondant" class="recipe-image">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="https://images.unsplash.com/photo-1563841930606-67e2bce48b78?q=80&w=800&auto=format&fit=crop" alt="Expérience VIP" class="vip-img">
                 </div>
                 <div class="col-lg-6 px-lg-5">
-                    <h2 class="section-title text-start mb-3" style="font-size: 1.5rem;">L'ULTIME FONDANT AU CHOCOLAT</h2>
-                    <p class="mb-4" style="color: #d1c8c5; line-height: 1.8;">
-                        Sublimez vos desserts avec notre <strong>Tablette Fondant 70%</strong>. Voici la liste des ingrédients pour réaliser un gâteau irrésistible, moelleux à cœur et craquant sur le dessus.
+                    <h2 class="mb-4" style="font-size: 2.5rem; color: var(--neon-pink);">L'EXPÉRIENCE ULTIME</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #bbb;">
+                        Passe au niveau supérieur. Avec le <strong>Pack VIP Lounge</strong>, évite les files d'attente et vis le concert de Bad Bunny dans des conditions exceptionnelles. Profite d'un espace privatif avant, pendant et après le show, avec DJ set privé et open bar.
                     </p>
-                    
-                    <div class="recipe-card">
-                        <h5 class="mb-4" style="color: var(--beige); letter-spacing: 2px;">VOTRE PANIER INGRÉDIENTS :</h5>
-                        <ul class="recipe-list">
-                            <li><i class="bi bi-check2-square"></i> <strong>200g</strong> de notre Tablette Fondant 70%</li>
-                            <li><i class="bi bi-check2-square"></i> <strong>150g</strong> de beurre doux</li>
-                            <li><i class="bi bi-check2-square"></i> <strong>150g</strong> de sucre en poudre</li>
-                            <li><i class="bi bi-check2-square"></i> <strong>50g</strong> de farine de blé</li>
-                            <li><i class="bi bi-check2-square"></i> <strong>3</strong> œufs entiers</li>
-                            <li><i class="bi bi-check2-square"></i> Une pincée de fleur de sel</li>
-                        </ul>
-                        <div class="mt-4 pt-2">
-                            <a href="#shop" class="btn-custom w-100 text-center">COMMANDER LA TABLETTE 70%</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="newsletter-section">
-        <div class="container">
-            <h4 class="newsletter-title mb-2">CHOCO 4 PASSION</h4>
-            <p class="mb-4">Inscrivez-vous à la newsletter pour recevoir nos offres secrètes.</p>
-            <div class="row justify-content-center">
-                <div class="col-md-6 col-lg-4">
-                    <div class="input-group">
-                        <input type="email" class="form-control form-control-custom" placeholder="Votre adresse e-mail">
-                        <button class="btn btn-newsletter" type="button">S'INSCRIRE</button>
-                    </div>
+                    <p style="font-size: 1.1rem; color: var(--text-light); font-weight: bold;">
+                        Attention : Seulement 200 packs VIP disponibles.
+                    </p>
+                    <a href="#tickets" class="btn-glow mt-3" style="font-size: 1rem; padding: 10px 25px;">SÉCURISER MON VIP</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="footer text-center">
+    <footer class="footer">
         <div class="container">
-            <div class="d-flex justify-content-center mb-3">
-                <a href="#" class="text-muted mx-2 text-decoration-none">À propos</a>
-                <a href="#" class="text-muted mx-2 text-decoration-none">Contact</a>
-                <a href="#" class="text-muted mx-2 text-decoration-none">Mentions légales</a>
+            <p class="mb-2">BAD BUNNY WORLD TOUR &copy; 2026. Billetterie officielle.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#" class="text-secondary text-decoration-none">CGV</a>
+                <a href="#" class="text-secondary text-decoration-none">FAQ</a>
+                <a href="#" class="text-secondary text-decoration-none">Contact</a>
             </div>
-            <p class="mb-0">&copy; 2026 Choco à prix très bas - Tous droits réservés.</p>
         </div>
     </footer>
 
     <div class="chat-widget">
         <div class="chat-window" id="chatWindow">
             <div class="chat-header">
-                <span><i class="bi bi-robot me-2"></i> ChocoBot</span>
+                <span>🐰 BenitoBot</span>
                 <i class="bi bi-x-lg close-chat" onclick="toggleChat()"></i>
             </div>
             <div class="chat-body" id="chatBody">
                 <div class="chat-message bot">
-                    👋 Bonjour ! Que puis-je faire pour vous aider à choisir vos chocolats aujourd'hui ?
+                    Hola ! 🌴 Prêt pour le meilleur concert de ta vie ? Dis-moi si tu as besoin d'aide pour choisir ta place.
                 </div>
             </div>
             <div class="chat-input">
-                <input type="text" id="userInput" placeholder="Écrivez votre message..." onkeypress="handleEnter(event)">
+                <input type="text" id="userInput" placeholder="Écris ton message..." onkeypress="handleEnter(event)">
                 <button onclick="sendMessage()"><i class="bi bi-send-fill"></i></button>
             </div>
         </div>
         <div class="chat-button" onclick="toggleChat()">
-            <i class="bi bi-chat-dots-fill"></i>
+            <i class="bi bi-chat-fill"></i>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
+        // --- Compte à rebours ---
         function updateTimer() {
             const now = new Date();
             const midnight = new Date();
@@ -564,7 +366,8 @@
             const diff = midnight - now;
 
             if (diff <= 0) {
-                document.getElementById('timer').innerText = "OFFRE TERMINÉE";
+                document.getElementById('timer').innerText = "SOLD OUT";
+                document.getElementById('timer').style.color = "red";
                 return;
             }
 
@@ -580,13 +383,10 @@
         setInterval(updateTimer, 1000);
         updateTimer();
 
+        // --- Chatbot ---
         function toggleChat() {
             const chatWindow = document.getElementById('chatWindow');
-            if (chatWindow.style.display === "flex") {
-                chatWindow.style.display = "none";
-            } else {
-                chatWindow.style.display = "flex";
-            }
+            chatWindow.style.display = chatWindow.style.display === "flex" ? "none" : "flex";
         }
 
         function sendMessage() {
@@ -606,7 +406,7 @@
                 setTimeout(() => {
                     const botMsgDiv = document.createElement('div');
                     botMsgDiv.className = 'chat-message bot';
-                    botMsgDiv.innerText = "Notre équipe est un peu occupée, mais n'hésitez pas à profiter des -30% qui s'appliquent directement dans votre panier ! 🍫";
+                    botMsgDiv.innerText = "Wow, on a énormément de demandes en ce moment ! Dépêche-toi de cliquer sur 'Sélectionner' pour garantir ta place en Fosse ou Gradin avant qu'il n'y en ait plus. 🔥";
                     chatBody.appendChild(botMsgDiv);
                     chatBody.scrollTop = chatBody.scrollHeight;
                 }, 1000);
