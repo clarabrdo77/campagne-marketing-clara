@@ -19,18 +19,16 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            /* Fond d'écran assombri pour faire ressortir le formulaire */
             background-image: linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.95)), url('https://focus.courrierinternational.com/2025/09/21/0/0/5472/3648/1280/0/60/0/b13901c_ftp-import-images-1-4wf6cjqmrplo-2236505304.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             color: var(--text-light);
             min-height: 100vh;
-            display: flex;
-            align-items: center;
+            padding: 40px 0;
         }
 
-        h1 {
+        h1, h3 {
             font-family: 'Oswald', sans-serif;
             text-transform: uppercase;
             color: var(--neon-blue);
@@ -38,7 +36,6 @@
             text-shadow: 0 0 10px rgba(5, 217, 232, 0.5);
         }
 
-        /* Style de la boîte du formulaire */
         .form-container {
             background-color: rgba(20, 20, 20, 0.85);
             border: 2px solid var(--neon-pink);
@@ -47,46 +44,72 @@
             box-shadow: 0 0 30px rgba(255, 42, 109, 0.2);
         }
 
-        /* Style des champs de saisie */
-        .form-label {
+        /* Section titres dans le formulaire */
+        .section-title {
             color: var(--neon-pink);
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
+            font-size: 1.1rem;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            border-bottom: 1px dashed #444;
+            padding-bottom: 5px;
         }
+
+        .form-label {
+            color: #ddd;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
         .form-control, .form-select {
             background-color: var(--bg-card);
             border: 1px solid #444;
             color: var(--text-light);
-            padding: 12px;
+            padding: 10px 15px;
+            font-size: 0.95rem;
         }
+
         .form-control:focus, .form-select:focus {
             background-color: #000;
             border-color: var(--neon-blue);
             box-shadow: 0 0 10px rgba(5, 217, 232, 0.5);
             color: white;
         }
-        
-        /* Personnaliser la couleur du texte dans le menu déroulant */
+
+        .form-control::placeholder {
+            color: #666;
+        }
+
+        /* Cases à cocher (Radio & Checkbox) */
+        .form-check-label {
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+        .form-check-input:checked {
+            background-color: var(--neon-blue);
+            border-color: var(--neon-blue);
+        }
+
         option {
             background-color: var(--bg-card);
             color: var(--text-light);
         }
 
-        /* Bouton d'action principal */
         .btn-glow {
             background: var(--neon-pink);
             color: var(--text-light);
             font-family: 'Oswald', sans-serif;
             border: none;
             letter-spacing: 2px;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             padding: 15px;
             transition: all 0.3s;
             box-shadow: 0 0 15px var(--neon-pink);
             text-transform: uppercase;
+            margin-top: 30px;
         }
+
         .btn-glow:hover {
             background: var(--text-light);
             color: var(--neon-pink);
@@ -94,7 +117,6 @@
             transform: scale(1.02);
         }
 
-        /* Bouton de retour */
         .btn-return {
             font-family: 'Oswald', sans-serif;
             letter-spacing: 1px;
@@ -103,6 +125,7 @@
             color: var(--neon-blue);
             transition: 0.3s;
         }
+
         .btn-return:hover {
             background-color: var(--neon-blue);
             color: #000;
@@ -113,42 +136,117 @@
 
 <body>
 
-    <div class="container py-5 w-100">
-        <div class="form-container p-4 p-md-5 mx-auto" style="max-width: 600px;">
+    <div class="container w-100">
+        <div class="form-container p-4 p-md-5 mx-auto" style="max-width: 800px;">
             
-            <h1 class="h2 mb-2 text-center">SÉCURISER MA PLACE</h1>
+            <h1 class="h2 mb-2 text-center">FINALISER LA COMMANDE</h1>
             <p class="text-center mb-4" style="color: #bbb; font-size: 0.95rem;">
-                Complétez ce formulaire pour valider votre commande pour l'unique date parisienne du World Tour 2026.
+                Temps restant pour valider ton panier : <strong style="color: var(--neon-pink);">09:59</strong>
             </p>
 
             <form action="merci.html">
 
-                <div class="mb-4">
-                    <label class="form-label">Nom complet</label>
-                    <input class="form-control" type="text" placeholder="Ex: Benito Antonio" required>
+                <h3 class="section-title">1. Choix des places</h3>
+                <div class="row g-3">
+                    <div class="col-md-8">
+                        <label class="form-label">Catégorie</label>
+                        <select class="form-select" required>
+                            <option value="" disabled selected>Sélectionne ton billet...</option>
+                            <option value="fosse">FOSSE OR - 129 €</option>
+                            <option value="gradin">GRADIN CAT 1 - 149 €</option>
+                            <option value="vip">PACK VIP LOUNGE - 349 €</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Quantité</label>
+                        <select class="form-select" required>
+                            <option value="1">1 billet</option>
+                            <option value="2">2 billets</option>
+                            <option value="3">3 billets</option>
+                            <option value="4">4 billets (Max)</option>
+                        </select>
+                    </div>
                 </div>
 
-                <div class="mb-4">
-                    <label class="form-label">Courriel</label>
+                <h3 class="section-title">2. Tes coordonnées</h3>
+                <div class="row g-3 mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Prénom</label>
+                        <input class="form-control" type="text" placeholder="Benito" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Nom</label>
+                        <input class="form-control" type="text" placeholder="Martinez" required>
+                    </div>
+                </div>
+
+                <div class="row g-3 mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Date de naissance</label>
+                        <input class="form-control" type="date" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Téléphone mobile (E-ticket)</label>
+                        <input class="form-control" type="tel" placeholder="+33 6 00 00 00 00" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Courriel (Envoi de la confirmation)</label>
                     <input class="form-control" type="email" placeholder="ton_adresse@mail.com" required>
                 </div>
 
-                <div class="mb-5">
-                    <label class="form-label">Choix de la zone</label>
-                    <select class="form-select" required>
-                        <option value="" disabled selected>Sélectionne ton billet...</option>
-                        <option value="fosse">FOSSE OR - 129 €</option>
-                        <option value="gradin">GRADIN CAT 1 - 149 €</option>
-                        <option value="vip">PACK VIP LOUNGE - 349 €</option>
-                    </select>
+                <h3 class="section-title">3. Adresse de facturation</h3>
+                <div class="mb-3">
+                    <label class="form-label">Adresse postale</label>
+                    <input class="form-control" type="text" placeholder="N° et nom de rue" required>
+                </div>
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label class="form-label">Code postal</label>
+                        <input class="form-control" type="text" placeholder="75000" required>
+                    </div>
+                    <div class="col-md-8">
+                        <label class="form-label">Ville</label>
+                        <input class="form-control" type="text" placeholder="Paris" required>
+                    </div>
                 </div>
 
-                <button class="btn btn-glow w-100 mb-3" type="submit">
-                    Je confirme ma commande
+                <h3 class="section-title">4. Moyen de paiement</h3>
+                <div class="mb-4">
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="radio" name="paiement" id="cb" checked required>
+                        <label class="form-check-label" for="cb">
+                            Carte Bancaire (Visa, Mastercard)
+                        </label>
+                    </div>
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="radio" name="paiement" id="paypal" required>
+                        <label class="form-check-label" for="paypal">
+                            PayPal
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="paiement" id="applepay" required>
+                        <label class="form-check-label" for="applepay">
+                            Apple Pay / Google Pay
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-check mb-4 mt-4">
+                    <input class="form-check-input" type="checkbox" value="" id="cgv" required>
+                    <label class="form-check-label" for="cgv">
+                        J'accepte les conditions générales de vente et je reconnais que toute commande est définitive (aucun remboursement possible).
+                    </label>
+                </div>
+
+                <button class="btn btn-glow w-100 mb-4" type="submit">
+                    PROCÉDER AU PAIEMENT SÉCURISÉ <i class="bi bi-lock-fill ms-2"></i>
                 </button>
 
-                <a class="btn btn-return w-100 py-2" href="index.html">
-                    Retour à l'accueil
+                <a class="btn btn-return w-100 py-2 text-center d-block" href="index.html">
+                    Annuler et retourner à l'accueil
                 </a>
 
             </form>
