@@ -20,14 +20,15 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            /* --- LA PHOTO DE BAD BUNNY EN FOND --- */
-            background-image: url('');
+            /* --- L'IMAGE DEMANDÉE EN FOND --- */
+            background-image: url('https://focus.courrierinternational.com/2025/09/21/0/0/5472/3648/1280/0/60/0/b13901c_ftp-import-images-1-4wf6cjqmrplo-2236505304.jpg');
             background-size: cover;
             background-position: center top;
             background-attachment: fixed;
             color: var(--text-light);
             scroll-behavior: smooth;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+            /* Ombre pour garantir que le texte reste lisible sur l'image claire/colorée */
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8); 
         }
 
         h1, h2, h3, h4, .navbar-brand {
